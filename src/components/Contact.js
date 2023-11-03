@@ -88,6 +88,7 @@ export const Contact = () => {
             'margin-top': '0px',
             'text-align': 'center',
           }}
+          id="contact"
         >
           Get in touch
         </p>

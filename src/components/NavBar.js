@@ -22,12 +22,6 @@ export const NavBar = () => {
   const onUpdateActiveLink = (value) => {
     setActiveLink(value);
   };
-  const click = () => {
-    window.scrollTo(0, 870);
-  };
-  const click1 = () => {
-    window.scrollTo(0, 2700);
-  };
 
   return (
     <Navbar expand="lg" className={scrolled ? 'scrolled' : ''}>
@@ -58,7 +52,6 @@ export const NavBar = () => {
               }
               onClick={() => {
                 onUpdateActiveLink('experience');
-                click();
               }}
             >
               Experience
@@ -81,27 +74,18 @@ export const NavBar = () => {
               }
               onClick={() => {
                 onUpdateActiveLink('projects');
-                click1();
               }}
             >
               Projects
             </Nav.Link>
-            {/* <Nav.Link
-              href="#blog"
-              className={
-                activeLink === 'blog' ? 'active navbar-link' : 'navbar-link'
-              }
-              onClick={() => window.open('https://tarunchawla.hashnode.dev')}
-            >
-              Blog
-            </Nav.Link> */}
-
             <Nav.Link
               href="#contact"
               className={
                 activeLink === 'contact' ? 'active navbar-link' : 'navbar-link'
               }
-              onClick={() => window.scrollTo(0, document.body.scrollHeight)}
+              onClick={() => {
+                onUpdateActiveLink('contact');
+              }}
             >
               Contact
             </Nav.Link>
