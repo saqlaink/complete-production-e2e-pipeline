@@ -48,9 +48,10 @@ export const ExperienceCard = ({ experience }) => (
 
 export function Experience() {
   return (
-    <div className="experience" id="experience">
+    <div className="experience">
       <motion.div variants={textVariant()}>
         <p
+          id="experience"
           className={styles.sectionSubText}
           style={{
             'padding-left': 0,

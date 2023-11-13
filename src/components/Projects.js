@@ -66,9 +66,10 @@ const ProjectCard = ({
 
 export const Projects = () => {
   return (
-    <div className="m-auto" id="projects">
+    <div className="m-auto">
       <motion.div variants={textVariant()}>
         <p
+          id="projects"
           className={`${styles.sectionSubText}`}
           style={{
             'padding-left': 0,
