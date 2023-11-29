@@ -82,4 +82,24 @@ pipeline{
       }
     }
   }
+
+  post {
+    always {
+      script {
+        def status = currentBuild.result ?: 'UNKNOWN'
+        def color 
+        switch(status) {
+          case 'SUCCESS':
+            color = 'good'
+            break
+          case 'FAILURE':
+            color = 'danger'
+            break
+          default:
+            color = 'warning'
+        }
+        slackSend(channel: "#jenkins", message: "GitOps Pipeline trigger ${status.toLowerCase()} for ${env.JOB_NAME} (${env.BUILD_NUMBER})\n More info at: ${env.BUILD_URL}", iconEmoji: ":jenkins:", color: color)
+      }
+    }
+  }
 }
