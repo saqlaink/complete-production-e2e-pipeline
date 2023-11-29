@@ -2,6 +2,9 @@ pipeline{
   agent{
     label "jenkins-agent"
   }
+  environment{
+    SONAR_TOKEN = credentials('jenkins-sonarqube-token')
+  }
   tools{
     nodejs "node"
   }
@@ -40,7 +43,7 @@ pipeline{
     stage("Sonarqube Analysis"){
       steps{
           sh "npm install -g sonarqube-scanner"
-          sh "sonar-scanner -Dsonar.projectKey=react-app -Dsonar.sources=src -Dsonar.host.url=https://sonarqube.realcollection.tech -Dsonar.login=sqa_8ef5555eb4fdeb89ce99262d0052a0049cb8a63d"
+          sh "sonar-scanner -Dsonar.projectKey=react-app -Dsonar.sources=src -Dsonar.host.url=https://sonarqube.realcollection.tech -Dsonar.login=${SONAR_TOKEN}"
       }
     }
   }
