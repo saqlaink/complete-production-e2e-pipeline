@@ -35,8 +35,12 @@ pipeline{
 
     stage("Sonarqube Analysis"){
       steps{
-          sh "npm install -g sonarqube-scanner"
-          sh "sonar-scanner -Dsonar.projectKey=react-app -Dsonar.sources=src -Dsonar.host.url=https://sonarqube.realcollection.tech -Dsonar.login=${SONAR_TOKEN}"
+          script {
+            withSonarQubeEnv(credentialsId: 'jenkins-sonarqube-token') {
+              sh "npm install -g sonarqube-scanner"
+              sh "sonar-scanner -Dsonar.projectKey=react-app -Dsonar.sources=src -Dsonar.host.url=https://sonarqube.realcollection.tech -Dsonar.login=${SONAR_TOKEN}"
+            }
+          }
       }
     }
 
