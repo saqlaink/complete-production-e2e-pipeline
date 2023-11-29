@@ -74,6 +74,14 @@ pipeline{
       }
     }
 
+    stage("Trivy Artifact Scan"){
+      steps{
+        script {
+          sh "trivy image ${IMAGE_NAME}:${IMAGE_TAG} > scan.txt"
+        }
+      }
+    }
+
     stage("Trigger CD Pipeline"){
       steps{
         script {
