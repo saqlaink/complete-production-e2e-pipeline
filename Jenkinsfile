@@ -77,8 +77,17 @@ pipeline{
     stage("Trivy Artifact Scan"){
       steps{
         script {
-          sh "trivy image ${IMAGE_NAME}:${IMAGE_TAG} > scan.txt"
+          sh "trivy image ${IMAGE_NAME}:${IMAGE_TAG} > trivy_scan_report.txt"
         }
+      }
+    }
+
+    stage('Send Email') {
+      steps {
+        emailext body: 'Please find the Trivy scan report attached.',
+        subject: 'Trivy Scan Report',
+        to: 'saqlainkhan25@gmail.com',
+        attachmentsPattern: 'trivy_scan_report.json'
       }
     }
 
