@@ -87,7 +87,7 @@ pipeline{
         emailext body: 'Please find the Trivy scan report attached.',
         subject: 'Trivy Scan Report',
         to: 'saqlainkhan25@gmail.com',
-        attachmentsPattern: 'trivy_scan_report.txt'
+        attachmentsPattern: 'trivy_scan_report.txt',
         mimeType: 'text/plain'
       }
     }
