@@ -22,11 +22,14 @@ The associated GitOps repository utilized by this pipeline is available at [GitO
 
 The Jenkins pipeline performs the following stages:
 
+[![Jenkins pipeline](https://i.postimg.cc/MKG9W463/Screenshot-2023-11-30-at-2-45-48-PM.png)](https://postimg.cc/vDprh065)
+
 - **Cleanup Workspace:** Initializes a clean workspace to start the deployment process.
 - **Checkout from SCM:** Retrieves the latest codebase from the associated GitOps repository.
 - **Build Application:** Executes the necessary steps to build the application.
 - **Test Application:** Runs tests to ensure application stability.
 - **SonarQube Analysis:** Conducts code analysis using SonarQube for enhanced code quality.
+  [![SonarQube Analysis](https://i.postimg.cc/Nf4LxJRt/Screenshot-2023-11-30-at-2-47-47-PM.png)](https://postimg.cc/N5KgsxNC)
 - **Quality Gate:** Enforces quality standards and awaits quality gate status.
 - **Build & Push Docker Image:** Builds and pushes the Docker image to the specified registry.
 - **Trivy Artifact Scan:** Performs security scanning using Trivy on the Docker image.
