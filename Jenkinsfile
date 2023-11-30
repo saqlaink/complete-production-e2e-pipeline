@@ -82,7 +82,7 @@ pipeline{
       }
     }
 
-    stage('Send Email with Trivy Scan Report'){ {
+    stage('Send Email with Trivy Scan Report'){ 
       steps {
         emailext body: 'Please find the Trivy scan report attached.',
         subject: 'Trivy Scan Report',
