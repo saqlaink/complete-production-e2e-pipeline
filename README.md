@@ -42,6 +42,3 @@ The Jenkins pipeline performs the following stages:
 Contributions and enhancements to this GitOps-driven Jenkins pipeline are welcome. Feel free to propose improvements or additional functionality to streamline deployment processes or enhance automation.
 
 ---
-
-Maintained by: [Your Name/Team](link_to_your_profile_or_team)
-Your contributions and suggestions are highly appreciated!
