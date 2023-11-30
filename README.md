@@ -1,6 +1,6 @@
 # GitOps-Driven Jenkins Pipeline for Complete Production Environment
 
-[![image.jpg](https://i.postimg.cc/KYhdGMG8/image.jpg)](https://postimg.cc/CRJvJdn3)
+[![image.jpg](https://i.postimg.cc/4xcvzXqY/image.jpg)](https://postimg.cc/v4Q6ywQy)
 
 This repository houses a GitOps-driven Jenkins pipeline designed to automate end-to-end deployments in a complete production environment. The pipeline orchestrates several critical stages, including application building, testing, SonarQube analysis, Docker image creation and push, artifact scanning using Trivy, email notifications, and triggering a Continuous Deployment (CD) pipeline.
 
