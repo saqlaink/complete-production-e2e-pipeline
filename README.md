@@ -12,6 +12,8 @@ The GitOps-driven Jenkins pipeline operates in an environment with the following
 4. **app-cluster**: Hosts the application clusters and manages deployments.
 5. **sonarqube**: Used to perform SonarQube analysis for code quality checks.
 
+[![Screenshot-2023-11-30-at-2-37-54-PM.png](https://i.postimg.cc/4ySj1T4y/Screenshot-2023-11-30-at-2-37-54-PM.png)](https://postimg.cc/rR5h83r2)
+
 ## Associated GitOps Repository
 
 The associated GitOps repository utilized by this pipeline is available at [GitOps Repository - saqlaink/gitops-complete-production-e2e-pipeline](https://github.com/saqlaink/gitops-complete-production-e2e-pipeline). This repository serves as the central hub for GitOps-based deployment strategies and configurations.
