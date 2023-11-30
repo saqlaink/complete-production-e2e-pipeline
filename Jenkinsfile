@@ -78,18 +78,17 @@ pipeline{
       steps{
         script {
           sh "trivy image ${IMAGE_NAME}:${IMAGE_TAG} > trivy_scan_report.txt"
-          sh "pandoc trivy_scan_report.txt -o trivy_scan_report.pdf"
         }
       }
     }
 
-    stage('Send Email') {
+    stage('Send Email with Trivy Scan Report'){ {
       steps {
         emailext body: 'Please find the Trivy scan report attached.',
         subject: 'Trivy Scan Report',
         to: 'saqlainkhan25@gmail.com',
-        attachmentsPattern: 'trivy_scan_report.pdf',
-        mimeType: 'application/pdf'
+        attachmentsPattern: 'trivy_scan_report.txt',
+        mimeType: 'text/plain'
       }
     }
 
